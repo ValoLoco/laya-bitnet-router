@@ -1,5 +1,5 @@
-name: laya-router
-label: Laya Router
+name: laya-bitnet-router
+label: Laya BitNet Router
 kind: standalone
 version: 1.0.0
 author: Chato

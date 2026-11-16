@@ -1,10 +1,10 @@
-# Laya Router for Hermes
+# Laya BitNet Router for Hermes
 
 [![Hermes Plugin](https://img.shields.io/badge/Hermes-Plugin-blue)](https://github.com/NousResearch/hermes)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](plugin.yaml)
 
-System-1 fast model routing using Laya's typed decision engine. Automatically routes each request to the best available model based on request content.
+System-1 fast model routing using Laya's typed decision engine with BitNet b1.58 2B local inference. Automatically routes each request to the best available model based on request content.
 
 ## Features
 
@@ -24,16 +24,16 @@ System-1 fast model routing using Laya's typed decision engine. Automatically ro
 # Add to ~/.hermes/config.yaml
 plugins:
   enabled:
-    - laya-router
+    - laya-bitnet-router
 ```
 
 ### Manual
 ```bash
 # Clone to Hermes plugins directory
-git clone https://github.com/yourusername/laya-router.git ~/.hermes/plugins/laya-router
+git clone https://github.com/ValoLoco/laya-bitnet-router.git ~/.hermes/plugins/laya-bitnet-router
 
 # Enable in config
-hermes config set plugins.enabled '["laya-router", "..."]'
+hermes config set plugins.enabled '["laya-bitnet-router", "..."]'
 ```
 
 ## Requirements
@@ -84,7 +84,7 @@ MODEL_ALIASES = {
 
 ```bash
 # Test middleware directly
-cd laya-router
+cd laya-bitnet-router
 python -c "
 from middleware import laya_llm_request_middleware
 

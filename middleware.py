@@ -1,5 +1,5 @@
 """
-Laya Router Middleware for Hermes.
+Laya BitNet Router Middleware for Hermes.
 
 Registers LLM_REQUEST_MIDDLEWARE to run Laya's System-1 routing on every request,
 selecting the best model based on the request content.
@@ -170,10 +170,10 @@ def laya_llm_request_middleware(request: dict[str, Any], **context: Any) -> dict
         if selected_model in model_aliases:
             request["model"] = model_aliases[selected_model]
         
-        print(f"[Laya Router] '{user_content[:50]}...' -> {selected_model} ({request['model']})")
+        print(f"[Laya BitNet Router] '{user_content[:50]}...' -> {selected_model} ({request['model']})")
         
     except Exception as e:
-        print(f"[Laya Router] Error: {e}, falling back to bitnet_local")
+        print(f"[Laya BitNet Router] Error: {e}, falling back to bitnet_local")
         request["_laya_routing"] = {
             "selected_model": "bitnet_local",
             "endpoint": MODEL_ENDPOINTS["bitnet_local"],

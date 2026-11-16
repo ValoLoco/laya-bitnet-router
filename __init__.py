@@ -1,4 +1,4 @@
-"""Laya Router: System-1 fast model routing using Laya's typed decision engine.
+"""Laya BitNet Router: System-1 fast model routing using Laya's typed decision engine.
 
 Automatically routes each request to the best model:
 - bitnet_local (BitNet b1.58 2B via bitnet.cpp) - Simple tasks, offline, low latency
@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 sys.path.insert(0, os.path.expanduser("~/.hermes/venv/lib/python3.14/site-packages"))
 
 def register(ctx) -> None:
-    """Register the Laya router middleware."""
+    """Register the Laya BitNet router middleware."""
     try:
         import sys
         import os
@@ -28,8 +28,8 @@ def register(ctx) -> None:
             sys.path.insert(0, plugin_dir)
         from middleware import laya_llm_request_middleware
     except ImportError as exc:
-        logger.warning(f"Laya Router: Failed to import middleware: {exc}")
+        logger.warning(f"Laya BitNet Router: Failed to import middleware: {exc}")
         return
     
     ctx.register_middleware("llm_request", laya_llm_request_middleware)
-    logger.info("Laya Router: Middleware registered successfully")
+    logger.info("Laya BitNet Router: Middleware registered successfully")
